@@ -40,6 +40,7 @@ Mit diesen Dateien und Übungen lernst Du:
 
 1. **Datenbank importieren**  
    Führe `IM3.sql` aus, um die Tabelle(n) zu erstellen (z. B. User-Tabelle).
+   Eine aktueller Version findest du auf Moodle.
 
 2. **Konfiguration**  
    Passe `config.php` an:
