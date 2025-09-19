@@ -46,6 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => console.error("Fetch-Fehler:", error)); // Gibt Fehler im Konsolenlog aus, falls die Daten nicht abgerufen werden können
 
+  function getCityColor(city) {
+    const cityColors = {
+      Bern: "#ffcf33ff",
+      Zürich: "#33a3ffff",
+      Chur: "#2edc07ff",
+      // Fügen Sie hier weitere Städte und ihre Farben hinzu
+    };
+    return cityColors[city] || getRandomColor(); // Gibt die vordefinierte Farbe zurück oder eine zufällige Farbe
+  }
+
   function getRandomColor() {
     var letters = "0123456789ABCDEF";
     var color = "#";

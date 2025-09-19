@@ -9,9 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
         label: city,
         data: data[city].map((item) => item.temperature_celsius),
         fill: false,
-        borderColor: getRandomColor(), // Generiert eine zufällige Farbe für jede Stadtlinie im Diagramm
+        borderColor: getCityColor(city), // Generiert eine zufällige Farbe für jede Stadtlinie im Diagramm
         tension: 0.1, // Gibt der Linie im Diagramm eine leichte Kurve
       }));
+      console.log(datasets);
 
       new Chart(ctx, {
         type: "line",
@@ -29,6 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
     .catch((error) => console.error("Fetch-Fehler:", error)); // Gibt Fehler im Konsolenlog aus, falls die Daten nicht abgerufen werden können
+
+  function getCityColor(city) {
+    const cityColors = {
+      Bern: "#ffcf33ff",
+      Zürich: "#33a3ffff",
+      Chur: "#2edc07ff",
+      // Fügen Sie hier weitere Städte und ihre Farben hinzu
+    };
+    return cityColors[city] || getRandomColor(); // Gibt die vordefinierte Farbe zurück oder eine zufällige Farbe
+  }
 
   function getRandomColor() {
     var letters = "0123456789ABCDEF";
