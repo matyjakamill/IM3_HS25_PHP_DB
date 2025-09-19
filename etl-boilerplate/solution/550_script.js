@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
         borderColor: getCityColor(city), // Generiert eine zufällige Farbe für jede Stadtlinie im Diagramm
         tension: 0.1, // Gibt der Linie im Diagramm eine leichte Kurve
       }));
-      console.log(datasets);
 
       new Chart(ctx, {
         type: "line",
